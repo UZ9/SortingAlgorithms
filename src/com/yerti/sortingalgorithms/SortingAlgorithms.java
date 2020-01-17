@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SortingAlgorithms {
 
-    private final Algorithm algorithm = new QuickSortAlgorithm();
+    private final Algorithm algorithm = new SelectionSortAlgorithm(); //Note: Performance on comments is based on average
     private final int DATA_SIZE = 100000;
     private final int DATA_MIN = 0;
     private final int DATA_MAX = 100;
@@ -21,6 +21,7 @@ public class SortingAlgorithms {
     private void runAlgorithms() {
         int[] data = generateData();
 
+        System.out.println("Running algorithm for " + algorithm.getClass().getSimpleName());
         System.out.println("Data before: " + Arrays.toString(data));
 
         double currentTime = System.currentTimeMillis();

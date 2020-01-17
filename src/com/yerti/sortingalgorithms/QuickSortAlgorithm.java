@@ -1,5 +1,9 @@
 package com.yerti.sortingalgorithms;
 
+/**
+ * Performs the QuickSort algorithm on a set of data
+ * Performance: O(n log n)
+ */
 public class QuickSortAlgorithm extends Algorithm {
 
 
