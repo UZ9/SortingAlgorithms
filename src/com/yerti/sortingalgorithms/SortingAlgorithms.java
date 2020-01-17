@@ -1,11 +1,16 @@
 package com.yerti.sortingalgorithms;
 
+import com.yerti.sortingalgorithms.searches.SearchAlgorithm;
+import com.yerti.sortingalgorithms.searches.SequentialSearch;
+import com.yerti.sortingalgorithms.sorts.InsertionSortAlgorithm;
+import com.yerti.sortingalgorithms.sorts.SortAlgorithm;
+
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SortingAlgorithms {
 
-    private final Algorithm algorithm = new SelectionSortAlgorithm(); //Note: Performance on comments is based on average
+    private final SortAlgorithm algorithm = new InsertionSortAlgorithm(); //Note: Performance on comments is based on average
     private final int DATA_SIZE = 100000;
     private final int DATA_MIN = 0;
     private final int DATA_MAX = 100;
@@ -31,6 +36,25 @@ public class SortingAlgorithms {
         double executionTime = (System.currentTimeMillis() - currentTime);
 
         System.out.println("Data after: " + Arrays.toString(data));
+
+        System.out.println("Execution Time: " + executionTime + "ms");
+
+        System.out.println();
+
+        data = generateData();
+
+        SearchAlgorithm searchAlgorithm = new SequentialSearch();
+
+        System.out.println("Running search for " + algorithm.getClass().getSimpleName());
+        System.out.println("Data before: " + Arrays.toString(data));
+
+        currentTime = System.currentTimeMillis();
+
+        int found = searchAlgorithm.searchForValue(27, data);
+
+        executionTime = System.currentTimeMillis() - currentTime;
+
+        System.out.println("Found 27 at index " + found);
 
         System.out.println("Execution Time: " + executionTime + "ms");
 

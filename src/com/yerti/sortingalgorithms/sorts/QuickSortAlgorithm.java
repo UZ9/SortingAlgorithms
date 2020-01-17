@@ -1,10 +1,10 @@
-package com.yerti.sortingalgorithms;
+package com.yerti.sortingalgorithms.sorts;
 
 /**
  * Performs the QuickSort algorithm on a set of data
  * Performance: O(n log n)
  */
-public class QuickSortAlgorithm extends Algorithm {
+public class QuickSortAlgorithm implements SortAlgorithm {
 
 
     @Override

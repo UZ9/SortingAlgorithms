@@ -1,10 +1,10 @@
-package com.yerti.sortingalgorithms;
+package com.yerti.sortingalgorithms.sorts;
 
 /**
  * Performs the BubbleSort algorithm on a set of data
  * Performance: O(n^2)
  */
-public class BubbleSortAlgorithm extends Algorithm {
+public class BubbleSortAlgorithm implements SortAlgorithm {
     @Override
     public int[] runAlgorithm(int[] data) {
         for (int i = 0; i < data.length; i++) {
